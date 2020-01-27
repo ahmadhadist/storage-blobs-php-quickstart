@@ -41,7 +41,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ACCOUNT_NAME').";AccountKey=".getenv('ACCOUNT_KEY');
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=awanwebap;AccountKey=u7s32wWQrmt7TjiFPOfFykLmNxwD/dKe3nM/o7BYznoLAJlfP8OQxjVXpgPggF8IdF5fbbRPdIeGx97ovgYviA==";
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
@@ -79,7 +79,7 @@ if (!isset($_GET["Cleanup"])) {
         $blobClient->createContainer($containerName, $createContainerOptions);
 
         // Getting local file so that we can upload it to Azure
-        $myfile = fopen($fileToUpload, "w") or die("Unable to open file!");
+        $myfile = fopen($fileToUpload, "r") or die("Unable to open file!");
         fclose($myfile);
         
         # Upload file as a block blob
