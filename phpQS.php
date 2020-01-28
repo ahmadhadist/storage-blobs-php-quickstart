@@ -46,7 +46,7 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=awanwebap;Accoun
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "HelloWorld.txt";
+$fileToUpload = "awanvision.html";
 
 if (!isset($_GET["Cleanup"])) {
     // Create container options object.
